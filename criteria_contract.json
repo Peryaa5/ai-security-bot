@@ -1,0 +1,266 @@
+{
+  "schema_version": "1.0",
+  "analysis_complete": false,
+  "vectorization_ready": false,
+  "embedding_text": null,
+  "criteria": [
+    {
+      "id": "1.1",
+      "category": "Общие",
+      "criterion": "Кто является пользователем Системы?",
+      "allowed_answers": [
+        "Группа работников Компании (до 100 работников)",
+        "Работники Компании (более 100 работников)",
+        "Третьи стороны (клиенты, поставщики и т.д.)",
+        "Третьи стороны (клиенты, поставщики и т.д.) и работники Компании",
+        "Доступ к Системе не ограничен"
+      ],
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Кто будет пользоваться системой: группа работников до 100 человек, более 100 работников, третьи стороны, третьи стороны совместно с работниками или неограниченный круг пользователей?"
+    },
+    {
+      "id": "1.2",
+      "category": "Общие",
+      "criterion": "В Системе обрабатывается информация категорий \"конфиденциально\", \"строго конфиденциально\" (включая персональные данные)?",
+      "allowed_answers": ["Да", "Нет"],
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Обрабатывает ли система конфиденциальную, строго конфиденциальную информацию или персональные данные?"
+    },
+    {
+      "id": "1.3",
+      "category": "Общие",
+      "criterion": "Интегрирована ли Система с другими сервисами Компании (ИС, почта и т.д.)?",
+      "allowed_answers": ["Да", "Нет"],
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Интегрирована ли система с другими информационными системами, почтой или иными сервисами компании?"
+    },
+    {
+      "id": "1.3.1",
+      "category": "Общие",
+      "criterion": "В интегрированных ИС обрабатывается информация категорий \"конфиденциально\", \"строго конфиденциально\" (включая персональные данные)?",
+      "allowed_answers": ["Да", "Нет", "n/a"],
+      "depends_on": {"id": "1.3", "answer": "Да"},
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Обрабатывают ли интегрированные системы конфиденциальную, строго конфиденциальную информацию или персональные данные?"
+    },
+    {
+      "id": "1.4",
+      "category": "Общие",
+      "criterion": "Система является внутренней разработкой?",
+      "allowed_answers": ["Да", "Нет"],
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Является ли система внутренней разработкой вашей компании?"
+    },
+    {
+      "id": "1.5",
+      "category": "Общие",
+      "criterion": "Система является внешней разработкой?",
+      "allowed_answers": ["Да", "Нет"],
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Является ли система внешней разработкой или продуктом стороннего поставщика?"
+    },
+    {
+      "id": "2.1",
+      "category": "Технические",
+      "criterion": "Используется ли механизм RAG?",
+      "allowed_answers": ["Да", "Нет"],
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Используется ли в системе механизм RAG?"
+    },
+    {
+      "id": "2.2",
+      "category": "Технические",
+      "criterion": "Используется open-source модель LLM?",
+      "allowed_answers": ["Да", "Нет"],
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Используется ли в системе open-source модель LLM?"
+    },
+    {
+      "id": "2.3",
+      "category": "Технические",
+      "criterion": "Выполняется ли обучение / дообучение (fine tuning) модели?",
+      "allowed_answers": ["Да", "Нет"],
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Выполняется ли обучение или дообучение модели?"
+    },
+    {
+      "id": "2.3.1",
+      "category": "Технические",
+      "criterion": "Для обучения / дообучения (fine tuning) модели используются датасеты из внешних источников?",
+      "allowed_answers": ["Да", "Нет", "n/a"],
+      "depends_on": {"id": "2.3", "answer": "Да"},
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Используются ли для обучения или дообучения датасеты из внешних источников?"
+    },
+    {
+      "id": "2.3.2",
+      "category": "Технические",
+      "criterion": "Для обучения / дообучения (fine tuning) модели используются собственные датасеты?",
+      "allowed_answers": ["Да", "Нет", "n/a"],
+      "depends_on": {"id": "2.3", "answer": "Да"},
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Используются ли для обучения или дообучения собственные датасеты?"
+    },
+    {
+      "id": "2.4",
+      "category": "Технические",
+      "criterion": "В Системе есть AI-агенты?",
+      "allowed_answers": ["Да", "Нет"],
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Используются ли в системе AI-агенты?"
+    },
+    {
+      "id": "2.4.1",
+      "category": "Технические",
+      "criterion": "Система является одноагентной?",
+      "allowed_answers": ["Да", "Нет", "n/a"],
+      "depends_on": {"id": "2.4", "answer": "Да"},
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Если в системе есть AI-агенты, является ли она одноагентной?"
+    },
+    {
+      "id": "2.4.2",
+      "category": "Технические",
+      "criterion": "Система является мультиагентной?",
+      "allowed_answers": ["Да", "Нет", "n/a"],
+      "depends_on": {"id": "2.4", "answer": "Да"},
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Если в системе есть AI-агенты, является ли она мультиагентной?"
+    },
+    {
+      "id": "2.5",
+      "category": "Технические",
+      "criterion": "Предполагается ли сценарий, когда Система выполняет поиск информации в сети Интернет?",
+      "allowed_answers": ["Да", "Нет"],
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Будет ли система выполнять поиск информации в сети Интернет?"
+    },
+    {
+      "id": "2.6",
+      "category": "Технические",
+      "criterion": "Содержит ли системный промпт закрытую бизнес-логику или конфиденциальную информацию?",
+      "allowed_answers": ["Да", "Нет"],
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Содержит ли системный промпт закрытую бизнес-логику или конфиденциальную информацию?"
+    },
+    {
+      "id": "2.7",
+      "category": "Технические",
+      "criterion": "Система хранит историю диалога с пользователем?",
+      "allowed_answers": ["Да", "Нет"],
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Хранит ли система историю диалога с пользователями?"
+    },
+    {
+      "id": "2.8",
+      "category": "Технические",
+      "criterion": "Используется ли протокол MCP для унифицированного взаимодействия между моделью и внешними сервисами, данными или инструментами?",
+      "allowed_answers": ["Да", "Нет"],
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Используется ли протокол MCP для взаимодействия модели с внешними сервисами, данными или инструментами?"
+    },
+    {
+      "id": "2.9",
+      "category": "Технические",
+      "criterion": "Обрабатывает ли Система запросы, поступающие от пользователей, в реальном времени?",
+      "allowed_answers": ["Да", "Нет"],
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Обрабатывает ли система пользовательские запросы в реальном времени?"
+    },
+    {
+      "id": "2.9.1",
+      "category": "Технические",
+      "criterion": "В качестве интерфейса для доступа к Системе используется веб-приложение?",
+      "allowed_answers": ["Да", "Нет"],
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Используется ли веб-приложение как интерфейс доступа к системе?"
+    },
+    {
+      "id": "2.9.2",
+      "category": "Технические",
+      "criterion": "В качестве интерфейса для доступа к Системе используется API?",
+      "allowed_answers": ["Да", "Нет"],
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Используется ли API как интерфейс доступа к системе?"
+    },
+    {
+      "id": "2.9.3",
+      "category": "Технические",
+      "criterion": "В качестве интерфейса для доступа к Системе используется мобильное приложение?",
+      "allowed_answers": ["Да", "Нет"],
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Используется ли мобильное приложение как интерфейс доступа к системе?"
+    },
+    {
+      "id": "2.10",
+      "category": "Технические",
+      "criterion": "Ведется ли в системе журналирование операционных данных (например, содержимое входных запросов и/или выходных ответов)?",
+      "allowed_answers": ["Да", "Нет"],
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Ведётся ли журналирование операционных данных, включая входные запросы или выходные ответы?"
+    },
+    {
+      "id": "2.11",
+      "category": "Технические",
+      "criterion": "Опубликована ли Система в сети Интернет?",
+      "allowed_answers": ["Да", "Нет"],
+      "status": "missing",
+      "answer": null,
+      "evidence": null,
+      "clarifying_question": "Опубликована ли система в сети Интернет?"
+    }
+  ],
+  "missing_criteria_ids": [
+    "1.1", "1.2", "1.3", "1.3.1", "1.4", "1.5",
+    "2.1", "2.2", "2.3", "2.3.1", "2.3.2", "2.4", "2.4.1", "2.4.2",
+    "2.5", "2.6", "2.7", "2.8", "2.9", "2.9.1", "2.9.2", "2.9.3", "2.10", "2.11"
+  ],
+  "unknown_criteria_ids": [],
+  "message_to_user": "Для завершения анализа необходимо уточнить недостающие сведения о системе. Ответьте на вопросы, указанные в clarifying_question для критериев со статусом missing."
+}
